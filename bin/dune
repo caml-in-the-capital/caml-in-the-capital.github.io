@@ -1,0 +1,13 @@
+(executable
+ (name caml_in_the_capital)
+ (public_name caml_in_the_capital)
+ (preprocess (pps ppx_jane))
+ (libraries
+  core
+  core_unix.command_unix
+  core_unix.date_unix
+  yocaml
+  yocaml_unix
+  yocaml_jingoo
+  yocaml_yaml
+  yocaml_markdown))

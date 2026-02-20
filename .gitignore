@@ -1,0 +1,8 @@
+_build/
+_site/
+_www/
+*.install
+.merlin
+result
+.direnv/
+

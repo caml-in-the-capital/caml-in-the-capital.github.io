@@ -1,0 +1,23 @@
+<main>
+  <div class="container">
+    <p class="talk-back"><a href="/">&larr; Back to all meetings</a></p>
+
+    <h1>{{ title }}</h1>
+
+    <div class="talk-meta">
+      <span class="talk-meta-speakers">{{ speakers_str }}</span>
+      <span class="talk-meta-sep">&middot;</span>
+      <span class="talk-meta-date">{{ meeting_date_display }}</span>
+      <span class="talk-meta-sep">&middot;</span>
+      <span class="talk-meta-location">{{ meeting_location }}</span>
+    </div>
+
+    <div class="talk-abstract-full">
+      {{ abstract | safe }}
+    </div>
+
+    {% if has_link %}
+    <a class="talk-link" href="{{ link }}">Meeting link &rarr;</a>
+    {% endif %}
+  </div>
+</main>

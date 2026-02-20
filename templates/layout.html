@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page_title }}</title>
+  <meta name="description" content="{{ description }}">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <div class="page-wrapper">
+    <header>
+      <div class="container">
+        <div class="header-content">
+          <h1><a href="/">🐫 Caml in the Capital</a></h1>
+          <p class="tagline">London's OCaml Meetup</p>
+        </div>
+        <div class="header-decoration"></div>
+      </div>
+    </header>
+
+    {{ yocaml_body | safe }}
+
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-brand">
+            <h3>Caml in the Capital</h3>
+            <p>Bringing the OCaml community together in London</p>
+          </div>
+          <div class="footer-info">
+            <p>&copy; 2026 Caml in the Capital</p>
+            <p>Built with Yocaml</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+<main>
+  <div class="container">
+    <h1 id="about">About</h1>
+    <p>
+      Caml in the Capital is London's OCaml meetup group. We bring together developers, researchers, and enthusiasts
+      to discuss OCaml development and share knowledge about the OCaml ecosystem.
+    </p>
+
+    <h2 id="meetings">Meetings</h2>
+
+    <p>
+      We host meetups once a quarter featuring talks, demos, and discussions about OCaml.
+      The meetings are typically held at 18:30 UK time in Central London with both in-person
+      and remote attendance options, though the time and venue may be adjusted to accommodate
+      speakers.
+    </p>
+
+    {% if has_upcoming_meetings %}
+    <h3 id="upcoming-meetings">Upcoming Meetings</h3>
+
+    {% for meeting in upcoming_meetings %}
+    <div class="meeting-card">
+      <div class="meeting-header">
+        <span class="meeting-date">{{ meeting.date_display }}</span>
+        <span class="meeting-time">{{ meeting.time_display }}</span>
+        <span class="meeting-location">at {{ meeting.location }}</span>
+      </div>
+      <ul class="talk-list">
+        {% for talk in meeting.talks %}
+        <li class="talk">
+          <div class="talk-title"><a href="{{ talk.url }}">{{ talk.title }}</a></div>
+          <div class="talk-speakers">{{ talk.speakers_str }}</div>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endfor %}
+
+    {% endif %}
+
+    {% if has_past_meetings %}
+    <h3 id="past-meetings">Past Meetings</h3>
+
+    {% for meeting in past_meetings %}
+    <div class="meeting-card meeting-card--past">
+      <div class="meeting-header">
+        <span class="meeting-date">{{ meeting.date_display }}</span>
+        <span class="meeting-location">at {{ meeting.location }}</span>
+      </div>
+      <ul class="talk-list">
+        {% for talk in meeting.talks %}
+        <li class="talk">
+          <div class="talk-title"><a href="{{ talk.url }}">{{ talk.title }}</a></div>
+          <div class="talk-speakers">{{ talk.speakers_str }}</div>
+          {% if talk.has_link %}
+          <a class="talk-link" href="{{ talk.link }}">Recording &rarr;</a>
+          {% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endfor %}
+
+    {% endif %}
+
+    {% if not has_upcoming_meetings and not has_past_meetings %}
+    <p>No meetings have been scheduled yet. Check back soon!</p>
+    {% endif %}
+
+    <h2 id="get-involved">Get Involved</h2>
+
+    <p>Interested in joining us or giving a talk? We'd love to hear from you!</p>
+
+    <ul>
+      <li>Join our discussions and stay updated on upcoming events.</li>
+      <li>Follow us for announcements and OCaml news.</li>
+      <li>Want to give a talk? Reach out to propose a topic!</li>
+    </ul>
+  </div>
+</main>
