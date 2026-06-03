@@ -12,3 +12,7 @@ traditional package managers, but enables using Opam for development easily
 whilst benefitting from Nix’s reproducible system dependencies. This provides
 one example of how Nix interfaces with other software development and
 deployment technologies.
+
+Speaker: [Ryan Gibb](https://ryan.freumh.org/)
+
+[Slides](https://ryan.freumh.org/talks/2026-ocaml-meetup-opam-nix.html)
